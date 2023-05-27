@@ -11,7 +11,7 @@ exports.register = async (req,res) => {
 
    var data = await user.create(req.body);
 
-    var token = jwt.sign({id:data.id , exp: Math.floor(Date.now() / 1000) - 30},'demo');
+    var token = jwt.sign({id:data.id},'demo');
 
     res.status(200).json({
         status:"success",
